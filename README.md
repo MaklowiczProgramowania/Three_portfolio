@@ -1,25 +1,37 @@
-// PL
-// Co robi ten projekt?
+# PL
+## Co robi ten projekt?
 
-// Przedstawia pewien sposób wyświatlania danych kluczowych na stronach typu portfolio. Tym projektem chce zacząć z naukę z grafiką trójwymiarową na stronach webowych, ( plus to projekt na zajęcia :V ). 
+- Przedstawia pewien sposób wyświatlania danych kluczowych na stronach typu portfolio. Tym projektem chce zacząć z naukę z grafiką trójwymiarową na stronach webowych, ( plus to projekt na zajęcia :V ). 
 
-// Dlaczego ten projekt jest użyteczny?
+## Dlaczego ten projekt jest użyteczny?
 
-// Może pomóc w rozpoczęciu pracy z biblioteką Three.js i zaprozentować sposób jej użycia.
+- Może pomóc w rozpoczęciu pracy z biblioteką Three.js i zaprozentować sposób jej użycia.
 
-// Jak rozpocząć prace z projektem?
+## Jak rozpocząć prace z projektem?
 
-// Projekt wymaga node.js
+// Projekt wymaga node.js.
 
-// EN
-// What does this project do?
+```
+    git clone <this-repo>
+    npm install
+    npm run dev
+```
 
-// It presents a certain way of displaying key data on portfolio-type websites. With this project, I want to start learning about three-dimensional graphics on web pages (plus, it's a project for my classes :V).
+# EN
+## What does this project do?
 
-// Why is this project useful?
+- It presents a certain way of displaying key data on portfolio-type websites. With this project, I want to start learning about three-dimensional graphics on web pages (plus, it's a project for my classes :V).
 
-// It can help to start working with the Three.js library and demonstrate how to use it.
+## Why is this project useful?
 
-// How to get started with the project?
+- It can help to start working with the Three.js library and demonstrate how to use it.
 
-// This project requires node.js.
+## How to get started with the project?
+
+- This project requires node.js.
+
+```
+    git clone <this-repo>
+    npm install
+    npm run dev
+```
