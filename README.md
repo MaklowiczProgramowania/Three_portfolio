@@ -1,7 +1,7 @@
 # PL
 ## Co robi ten projekt?
 
-- Przedstawia pewien sposób wyświatlania danych kluczowych na stronach typu portfolio. Tym projektem chce zacząć z naukę z grafiką trójwymiarową na stronach webowych, ( plus to projekt na zajęcia :V ). 
+- Przedstawia pewien sposób wyświatlania danych kluczowych na stronach typu portfolio. Tym projektem chce zacząć z naukę z grafiką trójwymiarową na stronach webowych. 
 
 ## Dlaczego ten projekt jest użyteczny?
 
@@ -12,7 +12,7 @@
 // Projekt wymaga node.js.
 
 ```
-    git clone <this-repo>
+    git clone <to-repo>
     npm install
     npm run dev
 ```
@@ -20,7 +20,7 @@
 # EN
 ## What does this project do?
 
-- It presents a certain way of displaying key data on portfolio-type websites. With this project, I want to start learning about three-dimensional graphics on web pages (plus, it's a project for my classes :V).
+- It presents a certain way of displaying key data on portfolio-type websites. With this project, I want to start learning about three-dimensional graphics on web pages.
 
 ## Why is this project useful?
 
@@ -28,7 +28,7 @@
 
 ## How to get started with the project?
 
-- This project requires node.js.
+// This project requires node.js.
 
 ```
     git clone <this-repo>

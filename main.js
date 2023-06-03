@@ -3,6 +3,7 @@ import './style.css'
 import * as THREE from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { PMREMGenerator } from 'three';
 
 const scene = new THREE.Scene();
 
@@ -19,16 +20,7 @@ camera.position.setZ(50);
 
 renderer.render(scene, camera);
 
-// Torus
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-const material = new THREE.MeshStandardMaterial({
-  color: 0xFF6347
-});
-
-const torus = new THREE.Mesh(geometry, material);
-
-scene.add(torus);
-
+// Światło
 const pointLight = new THREE.PointLight(0xffffff);
 
 pointLight.position.set(20, 20, 20);
@@ -46,18 +38,56 @@ const oceanMaterial = new THREE.MeshBasicMaterial({ map: oceanTexture });
 oceanMaterial.side = THREE.BackSide;
 
 const ocean = new THREE.Mesh(
-  new THREE.SphereGeometry( 190, 640, 10 ), 
+  new THREE.SphereGeometry( 190, 640, 100 ), 
   oceanMaterial
-);
+  );
 scene.add(ocean);
+
+const bubbles = [];
+
+function addBubble() {
+
+  const materialBubble = new THREE.MeshStandardMaterial({
+    color: 0xFFFFFF,
+    roughness: 0.1,
+    metalness: 0.1,
+    transparent: true,
+    opacity: 0.5,
+  });
+
+  let size = Math.random() * (0.3 - 0.2) + 0.2;
+
+  const geometryBubble = new THREE.SphereGeometry(size, 24, 24);
+
+  const bubble = new THREE.Mesh(geometryBubble, materialBubble);
+
+  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+  bubble.position.set(x, y, z);
+
+  bubbles.push(bubble);
+
+  scene.add(bubble);
+}
+
+Array(500).fill().forEach(addBubble);
+
+// Make bubbles move up, and after reaching the top move them to the bottom 
+function moveBubbles() {
+  bubbles.forEach(bubble => {
+    bubble.position.y += 0.05;
+    if (bubble.position.y > 50) {
+      bubble.position.y = -50;
+    }
+  });
+}
 
 function animate() {
   requestAnimationFrame(animate);
-  
-  torus.rotation.x += 0.01;
-  torus.rotation.y += 0.005;
-  torus.rotation.z += 0.01;
 
+  controls.update();
+
+  moveBubbles();
+  
   renderer.render(scene, camera);
 }
 
