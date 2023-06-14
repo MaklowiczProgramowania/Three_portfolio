@@ -146,7 +146,31 @@ footer a:hover{
   cursor: default;
 }
 
-/* Make the h1, h2, h3 and p smaller font size deppending of the screen size */
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  header{
+    font-size: 1.25rem; 
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  section p{
+    font-size: 1rem;
+  }
+  footer{
+    padding-bottom: 1rem;
+  }
+  footer a{
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  #autor-info{
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 800px) {
   li{
     font-size: 0.75rem;
@@ -160,8 +184,8 @@ footer a:hover{
   h3 {
     font-size: 1rem;
   }
-  p {
-    font-size: 0.6rem;
+  section p{
+    font-size: 0.75rem;
   }
   footer{
     padding: 0 2rem 0 2rem;
@@ -172,30 +196,5 @@ footer a:hover{
   }
   #autor-info{
     font-size: 0.75rem;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  header{
-    font-size: 1.25rem; 
-  }
-  h2 {
-    font-size: 1.75rem;
-  }
-  h3 {
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-  footer{
-    padding-bottom: 1rem;
-  }
-  footer a{
-    font-size: 1rem;
-    padding: 0.5rem;
-  }
-  #autor-info{
-    font-size: 1rem;
   }
 }
