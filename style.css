@@ -48,6 +48,7 @@ nav{
   z-index: 100;
   background: var(--dark-bg);
   display: flex;
+  border-radius: 0 0 0 1rem;
 }
 
 nav .bars{
@@ -55,14 +56,13 @@ nav .bars{
   flex-direction: column;
   justify-content: center;
   padding: 1rem;
-  cursor: pointer;
 }
 
 nav .bar {
-  width: 35px;
-  height: 5px;
+  width: 30px;
+  height: 3px;
   background-color: white;
-  margin: 6px 0;
+  margin: 4px 0;
 }
 
 nav ul{
@@ -70,23 +70,24 @@ nav ul{
   list-style: none;
   padding: 0;
   margin: 0;
+  align-items: center;
 }
 
-a {
+.menu-item {
+  font-size: 1.5rem;
   padding: 0 1rem;
   margin: 0;
+  transition: ease-in-out 0.5s;
 }
  
-a:hover {
-  background: white;
-  color: black;
-  transition: ease-in-out 0.7s;
+.menu-item:hover {
+  padding: 0 2rem 0 2rem;
 } 
 
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   font-style: normal;
 }
@@ -97,6 +98,7 @@ header {
   font-size: 2.5rem;
   padding: 2rem;
   margin-bottom: var(--spacing);
+  border-radius: 1rem;
 }
 
 section {
@@ -106,21 +108,7 @@ section {
   font-size: 1.25rem;
   line-height: 1.5;
   margin-bottom: var(--spacing);
-}
-
-blockquote {
-  margin: 0;
-  padding: 0;
-  grid-column: 2 / span 9;
-  margin-bottom: var(--spacing);
-}
-
-blockquote p {
-  color: black;
-  background-color: white;
-  font-size: 4rem;
-  display: inline;
-  line-height: 1;
+  border-radius: 1rem;
 }
 
 .left {
@@ -147,9 +135,67 @@ footer a{
   font-size: 1.25rem;
   font-weight: 700;
   font-style: normal;
-  padding: 2rem;
+}
+
+footer a:hover{
+  color: #00a2ff;
 }
 
 #autor-info{
   font-size: 1.25rem;
+  cursor: default;
+}
+
+/* Make the h1, h2, h3 and p smaller font size deppending of the screen size */
+@media screen and (max-width: 800px) {
+  li{
+    font-size: 0.75rem;
+  }
+  header{
+    font-size: 0.75rem; 
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.6rem;
+  }
+  footer{
+    padding: 0 2rem 0 2rem;
+  }
+  footer a{
+    font-size: 0.75rem;
+    padding: 0rem;
+  }
+  #autor-info{
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header{
+    font-size: 1.25rem; 
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  footer{
+    padding-bottom: 1rem;
+  }
+  footer a{
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  #autor-info{
+    font-size: 1rem;
+  }
 }

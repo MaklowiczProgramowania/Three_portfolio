@@ -1,10 +1,16 @@
 const menuButton = document.querySelector('.bars');
 const menu = document.querySelector('.menu-items');
 
-menuButton.addEventListener('click', () => {
-    if (menu.style.display === 'none') {
+menuButton.addEventListener('mouseover', () => {
+    menu.style.display = 'flex';
+    menu.addEventListener('mouseover', () => {
         menu.style.display = 'flex';
-    } else {
+    });
+});
+
+menuButton.addEventListener('mouseout', () => {
+    menu.style.display = 'none';
+    menu.addEventListener('mouseout', () => {
         menu.style.display = 'none';
-    }
+    });
 });

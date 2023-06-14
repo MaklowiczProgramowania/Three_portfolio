@@ -94,7 +94,6 @@ const zdjecie = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
   new THREE.MeshStandardMaterial({ 
     map: zdjecieTexture,
-    reflectivity: 0.5,
     metalness: 0.8
    })
 );
