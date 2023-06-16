@@ -177,6 +177,7 @@ footer a:hover{
   }
   header{
     font-size: 0.75rem; 
+    grid-column: 3 / span 8;
   }
   h2 {
     font-size: 1.25rem;
@@ -184,6 +185,10 @@ footer a:hover{
   h3 {
     font-size: 1rem;
   }
+  section, .left{
+    grid-column: 3 / span 8;
+  }
+
   section p{
     font-size: 0.75rem;
   }
