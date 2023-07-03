@@ -23,11 +23,11 @@ renderer.render(scene, camera);
 // Światło
 const pointLight = new THREE.PointLight(0x00C0C8);
 
-pointLight.position.set(2, 50, 50);
+pointLight.position.set(0, 45, 50);
 
 const pointLight2 = new THREE.PointLight(0x00C0C8);
 
-pointLight2.position.set(2, 35, 50);
+pointLight2.position.set(-10, 25, 50);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
 
@@ -36,7 +36,7 @@ scene.add(pointLight, pointLight2, ambientLight);
 const controls = new OrbitControls(camera, renderer.domElement);
 
 // Tlo - ocean
-const oceanTexture = new THREE.TextureLoader().load('ocean.jpg');
+const oceanTexture = new THREE.TextureLoader().load('./img/ocean.jpg');
 const oceanMaterial = new THREE.MeshBasicMaterial({ map: oceanTexture });
 
 oceanMaterial.side = THREE.BackSide;
@@ -88,7 +88,7 @@ function moveBubbles() {
 }
 
 // Tlo - obiekt stworzony z zdjęcia
-const zdjecieTexture = new THREE.TextureLoader().load('zdjecie.png');
+const zdjecieTexture = new THREE.TextureLoader().load('./img/zdjecie.png');
 
 const zdjecie = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
@@ -98,27 +98,48 @@ const zdjecie = new THREE.Mesh(
    })
 );
 
-zdjecie.position.z = 42;
-zdjecie.position.y = 38;
-zdjecie.position.x = 6;
+zdjecie.position.z = 42; 
+zdjecie.position.y = 18; 
+zdjecie.position.x = 1; 
 
-// Move zdjecie up and down like it's floating in the ocean
+// Animacja obiektu zdjecie symulująca unoszenie się i opadanie
 const zdjecieUp = 0.005;
 const zdjecieDown = -0.004;
 let zdjecieDirection = zdjecieUp;
 
 function moveZdjecie() {
   zdjecie.position.y += zdjecieDirection;
-  if (zdjecie.position.y > 40) {
+  if (zdjecie.position.y > 25) {
     zdjecieDirection = zdjecieDown;
-  } else if (zdjecie.position.y < 36) {
+  } else if (zdjecie.position.y < 18) {
     zdjecieDirection = zdjecieUp;
   }
-  zdjecie.rotation.y += 0.005;
-  zdjecie.rotation.x += 0.005;
+  zdjecie.rotation.y += 0.002;
+  zdjecie.rotation.x += 0.002;
 }
 
 scene.add(zdjecie);
+
+const githubTexture = new THREE.TextureLoader().load('./img/github.png');
+
+const githubLogo = new THREE.Mesh(
+  new THREE.PlaneGeometry( 9, 9),
+  new THREE.MeshStandardMaterial({ 
+    map: githubTexture,
+    side: THREE.DoubleSide,
+    metalness: 0.2
+   })
+);
+
+githubLogo.position.z = 42;
+githubLogo.position.y = -2;
+githubLogo.position.x = -8;
+
+scene.add(githubLogo);
+
+function moveGithubLogo() {
+  githubLogo.rotation.y += 0.002;
+}
 
 // Ruch kamery
 function moveCamera() {
@@ -133,6 +154,7 @@ function animate() {
   requestAnimationFrame(animate);
 
   moveZdjecie();
+  moveGithubLogo();
 
   controls.update();
 

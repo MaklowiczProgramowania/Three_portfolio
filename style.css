@@ -82,6 +82,7 @@ nav ul{
  
 .menu-item:hover {
   padding: 0 2rem 0 2rem;
+  letter-spacing: 0.1rem;
 } 
 
 nav a {
@@ -111,6 +112,42 @@ section {
   border-radius: 1rem;
 }
 
+section img{
+  width: 30%;
+  height: auto;
+  margin: 0 5px;
+  border-right: 5px solid #000;
+  border-bottom: 5px solid #000;
+  border-radius: 1rem;
+  cursor: zoom-in;
+}
+
+.dialogBox{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--dark-bg);
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  cursor: zoom-out;
+  border: 2px solid #000;
+}
+
+.githubSection{
+  grid-column: 8 / span 5;
+  background: none;
+}
+
+.githubSection:hover{
+  cursor: pointer;
+}
+
 .left {
   grid-column: 6 / 12;
 }
@@ -123,7 +160,6 @@ footer{
   align-items: center;
   padding: 1rem;
   background: var(--dark-bg);
-  font-size: 1.25rem;
   line-height: 1.5;
   margin: 0;
   padding: 0.3rem 7.5rem;
@@ -132,7 +168,7 @@ footer{
 footer a{
   color: white;
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   font-style: normal;
 }
@@ -142,7 +178,7 @@ footer a:hover{
 }
 
 #autor-info{
-  font-size: 1.25rem;
+  font-size: 1rem;
   cursor: default;
 }
 
@@ -163,11 +199,11 @@ footer a:hover{
     padding-bottom: 1rem;
   }
   footer a{
-    font-size: 1rem;
+    font-size: 0.75rem;
     padding: 0.5rem;
   }
   #autor-info{
-    font-size: 1rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -196,10 +232,10 @@ footer a:hover{
     padding: 0 2rem 0 2rem;
   }
   footer a{
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     padding: 0rem;
   }
   #autor-info{
-    font-size: 0.75rem;
+    font-size: 0.5rem;
   }
 }
