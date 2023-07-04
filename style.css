@@ -91,7 +91,7 @@ section {
   grid-column: 2 / 8;
   padding: 1rem;
   background: var(--dark-bg);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   margin-bottom: var(--spacing);
   border-radius: 1rem;
