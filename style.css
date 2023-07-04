@@ -5,13 +5,11 @@ body{
   padding: 0;
   box-sizing: border-box;
 }
-
 canvas{
   position: fixed;
   top: 0;
   left: 0;
 }
-
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 300px;
@@ -20,7 +18,6 @@ canvas{
   font-weight: 400;
   font-style: normal;
 }
-
 main {
   width: 100vw;
   color: white;
@@ -30,17 +27,14 @@ main {
   margin: 0px auto;
   opacity: 0.9;
   margin-top: 10vh;
-  
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
-
 h1, h2, h3 {
   font-family: elevon, sans-serif;
   font-weight: 700;
   font-style: normal;
 }
-
 nav{
   position: fixed;
   top: 0;
@@ -50,21 +44,18 @@ nav{
   display: flex;
   border-radius: 0 0 0 1rem;
 }
-
 nav .bars{
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 1rem;
 }
-
 nav .bar {
   width: 30px;
   height: 3px;
   background-color: white;
   margin: 4px 0;
 }
-
 nav ul{
   display: none;
   list-style: none;
@@ -72,27 +63,22 @@ nav ul{
   margin: 0;
   align-items: center;
 }
-
 .menu-item {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 0 1rem;
   margin: 0;
   transition: ease-in-out 0.5s;
 }
- 
 .menu-item:hover {
   padding: 0 2rem 0 2rem;
   letter-spacing: 0.1rem;
 } 
-
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
   font-weight: 700;
   font-style: normal;
 }
-
 header {
   background: var(--dark-bg);
   grid-column: 2 / span 5;
@@ -101,7 +87,6 @@ header {
   margin-bottom: var(--spacing);
   border-radius: 1rem;
 }
-
 section {
   grid-column: 2 / 8;
   padding: 1rem;
@@ -111,7 +96,6 @@ section {
   margin-bottom: var(--spacing);
   border-radius: 1rem;
 }
-
 section img{
   width: 30%;
   height: auto;
@@ -121,7 +105,9 @@ section img{
   border-radius: 1rem;
   cursor: zoom-in;
 }
-
+.githubMobilne{
+  display: none;
+}
 .dialogBox{
   position: fixed;
   top: 50%;
@@ -130,28 +116,24 @@ section img{
   background: var(--dark-bg);
   width: 80%;
   height: 80%;
+  border-radius: 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   z-index: 100;
   cursor: zoom-out;
   border: 2px solid #000;
 }
-
 .githubSection{
   grid-column: 8 / span 5;
+  margin-left: 4rem;
+  margin-right: 4rem;
   background: none;
 }
-
 .githubSection:hover{
   cursor: pointer;
 }
-
 .left {
   grid-column: 6 / 12;
 }
-
 footer{
   grid-column: 1 / span 12;
   height: 10vh;
@@ -164,7 +146,6 @@ footer{
   margin: 0;
   padding: 0.3rem 7.5rem;
 }
-
 footer a{
   color: white;
   text-decoration: none;
@@ -172,17 +153,17 @@ footer a{
   font-weight: 700;
   font-style: normal;
 }
-
 footer a:hover{
   color: #00a2ff;
 }
-
 #autor-info{
   font-size: 1rem;
   cursor: default;
 }
-
 @media screen and (min-width: 800px) and (max-width: 1200px) {
+  .menu-item {
+    font-size: 1.1rem;
+  }
   header{
     font-size: 1.25rem; 
   }
@@ -195,6 +176,9 @@ footer a:hover{
   section p{
     font-size: 1rem;
   }
+  .dialogBox{
+    height: 55%;
+  }
   footer{
     padding-bottom: 1rem;
   }
@@ -206,7 +190,6 @@ footer a:hover{
     font-size: 0.75rem;
   }
 }
-
 @media screen and (max-width: 800px) {
   li{
     font-size: 0.75rem;
@@ -224,16 +207,41 @@ footer a:hover{
   section, .left{
     grid-column: 3 / span 8;
   }
-
   section p{
-    font-size: 0.75rem;
+    font-size: 0.9rem;
+  }
+  section img{
+    width: 90%;
+  }
+  .dialogBox{
+    display: none;
+  }
+  .githubSection{
+    display: none;
+  }
+  .githubSection:hover{
+    cursor: default;
+  }
+  .githubMobilne{
+    display: flex;
+    width: 80%;
+    height: auto;
+    background-color: #FFF;
+    padding: 0.5rem;
+    border-right: 5px solid #000;
+    border-bottom: 5px solid #000;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+  .dialogBox{
+    height: 38%;
   }
   footer{
-    padding: 0 2rem 0 2rem;
+    padding: 0 1rem 0 1rem;
   }
   footer a{
     font-size: 0.5rem;
-    padding: 0rem;
+    padding: 0rem 0.5rem;
   }
   #autor-info{
     font-size: 0.5rem;
